@@ -152,21 +152,21 @@ class Keuangan extends RW_Controller {
 		$databayaran = $this->mkeu->keranjang_data($this->input->post('nis'));
 		$datasiswa = $this->msiswa->tampilByNis($this->input->post('nis'));
 
-		$email_akun = "ummul.rodhiyah.noreply@gmail.com"; // Email gmail ummul.rodhiyah.noreply@gmail.com
-		$email_pass = "ummul2019"; // Password gmail : ummul2019
+		$email_akun = ""; // Email account @gmail.com
+		$email_pass = ""; // Its password
 
 		$config = [
-            'mailtype'  => 'html',
-            'charset'   => 'utf-8',
-            'protocol'  => 'smtp',
-            'smtp_host' => 'smtp.gmail.com',
-            'smtp_user' => $email_akun,
-            'smtp_pass'   => $email_pass,
-            'smtp_crypto' => 'ssl',
-            'smtp_port'   => 465,
-            'crlf'    => "\r\n",
-            'newline' => "\r\n"
-        ];
+		    'mailtype'  => 'html',
+		    'charset'   => 'utf-8',
+		    'protocol'  => 'smtp',
+		    'smtp_host' => 'smtp.gmail.com',
+		    'smtp_user' => $email_akun,
+		    'smtp_pass'   => $email_pass,
+		    'smtp_crypto' => 'ssl',
+		    'smtp_port'   => 465,
+		    'crlf'    => "\r\n",
+		    'newline' => "\r\n"
+		];
 
 		$this->load->library('email', $config);
 
